@@ -8,6 +8,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideFileRouter(),
     provideHttpClient(withFetch()),
-    provideClientHydration(),
+    provideClientHydration()
   ],
 };
