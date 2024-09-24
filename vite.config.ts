@@ -13,7 +13,14 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [analog({
     nitro: {
-      preset: 'azure'
+      // preset: 'azure',
+      routeRules: {
+        '/api/auth/callback': { redirect: { to: '/auth/callback' } },
+        '/api/auth/logoutCallback': { redirect: { to: '/auth/logoutCallback' } },
+      },
+      externals: {
+        inline: ['uuid', '@azure/msal-common', '@azure/msal-node', 'std-env']
+      }
     }
   })],
   test: {
