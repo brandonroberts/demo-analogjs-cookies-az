@@ -1,6 +1,7 @@
 import { defineEventHandler, sendRedirect, setCookie } from 'h3';
 import {CryptoProvider} from '@azure/msal-node';
 import { REDIRECT_URI } from '../../config/authConfig';
+import * as crypto from 'node:crypto';
 
 export default defineEventHandler(async (event) => {    
     const cryptoProvider = new CryptoProvider();
