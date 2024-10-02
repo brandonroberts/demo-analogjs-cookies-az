@@ -15,8 +15,7 @@ export default defineConfig(({ mode }) => ({
     nitro: {
       // preset: 'azure',
       routeRules: {
-        '/api/auth/callback': { redirect: { to: '/auth/callback' } },
-        '/api/auth/logoutCallback': { redirect: { to: '/auth/logoutCallback' } },
+        '/api/**': { proxy: { to: '/**' } }
       },
       externals: {
         inline: ['uuid', '@azure/msal-common', '@azure/msal-node', 'std-env']
